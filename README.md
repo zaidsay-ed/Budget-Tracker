@@ -22,4 +22,7 @@ the course is done
 
 ### *User Stories*
 
-- As a user, I want to input my income and see the result 
+- As a user I want a platform to track my expenses and show my purse balance.
+- As a user, I want to input my income and see how my purse is affected.
+- As a user, I want to input my expenses and see how my purse is affected.
+- As a user, I want to be able to view my purse balance after each activity.
