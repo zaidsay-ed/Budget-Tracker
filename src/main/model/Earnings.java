@@ -8,7 +8,7 @@ public class Earnings {
     private ArrayList<Income> earnings; // list of earnings
 
 
-    Earnings() {
+    public Earnings() {
         earnings = new ArrayList<Income>();
     }
 
@@ -20,10 +20,29 @@ public class Earnings {
     }
 
 
-    // REQUIRES: list is not empty
-    // MODIFIES: this
-    // EFFECTS: removes the Earning at the index i of the list and returns it
-    public Income getNextRequest(int i) {
-        return earnings.get(i);
+    // EFFECTS: represents the number of expenditures currently in the list.
+    public int getNumItems() {
+        return earnings.size();
+    }
+
+    // EFFECTS: true if the list is empty, false otherwise
+    public boolean isEmpty() {
+        return earnings.size() == 0;
+    }
+
+    // EFFECTS: gives total earnings in list
+    public double getTotalEarnings() {
+        int sum = 0;
+        for (Income earning : earnings) {
+            sum += earning.getAmount();
+        }
+        return sum;
+    }
+
+    // EFFECTS: prints statements for all earnings
+    public void printEarnings() {
+        for (Income earning : earnings) {
+            System.out.println(earning.getStatement());
+        }
     }
 }

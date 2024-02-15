@@ -13,8 +13,5 @@ public class Income extends Expense {
         this.amount = amount;
     }
 
-    @Override
-    public String getStatement() {
-        return "Income - Date: " + date + ", Description: " + description + ", Amount: $" + amount;
-    }
+
 }

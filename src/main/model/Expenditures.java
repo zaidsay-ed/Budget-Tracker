@@ -7,7 +7,7 @@ public class Expenditures {
 //Creates list of expenses to track
     private ArrayList<Expense> expenses;  // list of expenses
 
-    Expenditures() {
+    public Expenditures() {
         expenses = new ArrayList<Expense>();
     }
 
@@ -17,14 +17,30 @@ public class Expenditures {
         expenses.add(e);
     }
 
-
-    // REQUIRES: list is not empty
-    // MODIFIES: this
-    // EFFECTS: prints out all requests
-    public void printRequest() {
-
+    // EFFECTS: represents the number of expenses currently in the list.
+    public int getNumItems() {
+        return expenses.size();
     }
 
+    // EFFECTS: true if the list is empty, false otherwise
+    public boolean isEmpty() {
+        return expenses.size() == 0;
+    }
 
+    // EFFECTS: gives total expenses in list
+    public double getTotalExpense() {
+        int sum = 0;
+        for (Expense expense : expenses) {
+            sum += expense.getAmount();
+        }
+        return sum;
+    }
+
+    // EFFECTS: prints statements for all expenses
+    public void printExpenses() {
+        for (Expense expense : expenses) {
+            System.out.println(expense.getStatement());
+        }
+    }
 
 }
