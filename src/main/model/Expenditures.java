@@ -36,12 +36,6 @@ public class Expenditures {
         return sum;
     }
 
-    // EFFECTS: prints statements for all expenses
-    public void printExpenses() {
-        for (Expense expense : expenses) {
-            System.out.println(expense.getStatement());
-        }
-    }
 
 
     public Expense getExpense(int i) {

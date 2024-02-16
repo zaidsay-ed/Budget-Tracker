@@ -43,14 +43,14 @@ public class NewStatement {
         System.out.println("");
         System.out.println(" Date\t\t\t Description\t\t\t Amount");
         System.out.println("************************************************");
-        earning.printEarnings();
+        printEarnings();
         System.out.println("************************************************");
         System.out.println("");
         System.out.println("Cash Outflow :");
         System.out.println("");
         System.out.println(" Date\t\t\t Description\t\t\t Amount");
         System.out.println("************************************************");
-        expenses.printExpenses();
+        printExpenses();
         System.out.println("************************************************");
         System.out.println("");
         System.out.println("************************************************");

@@ -41,12 +41,6 @@ public class Earnings {
         return sum;
     }
 
-    // EFFECTS: prints statements for all earnings
-    public void printEarnings() {
-        for (Income earning : earnings) {
-            System.out.println(earning.getStatement());
-        }
-    }
 
     public Income getEarning(int i) {
         return earnings.get(i);
