@@ -58,4 +58,16 @@ public class NewStatement {
         System.out.println("************************************************");
     }
 
+    public static void printEarnings() {
+        for (int i = 0; i < earning.getNumItems(); i++) {
+            System.out.println(earning.getEarning(i).getStatement());
+        }
+    }
+
+    public static void printExpenses() {
+        for (int i = 0; i < expenses.getNumItems(); i++) {
+            System.out.println(expenses.getExpense(i).getStatement());
+        }
+    }
+
 }

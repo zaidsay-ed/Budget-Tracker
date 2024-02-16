@@ -34,6 +34,7 @@ class EarningsTest {
         assertEquals(2, earnings.getNumItems());
         earnings.addEarning(i3);
         assertEquals(6000, earnings.getTotalEarnings());
+        assertEquals(i1, earnings.getEarning(0));
     }
 
 }

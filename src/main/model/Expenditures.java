@@ -43,4 +43,9 @@ public class Expenditures {
         }
     }
 
+
+    public Expense getExpense(int i) {
+        return expenses.get(i);
+    }
+
 }

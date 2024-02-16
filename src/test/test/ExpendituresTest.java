@@ -36,6 +36,7 @@ public class ExpendituresTest {
         assertEquals(2, expenses.getNumItems());
         expenses.addExpense(e3);
         assertEquals(6000, expenses.getTotalExpense());
+        assertEquals(e1, expenses.getExpense(0));
     }
 
 }

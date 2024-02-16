@@ -47,4 +47,8 @@ public class Earnings {
             System.out.println(earning.getStatement());
         }
     }
+
+    public Income getEarning(int i) {
+        return earnings.get(i);
+    }
 }
