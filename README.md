@@ -5,7 +5,7 @@
 
 1. 
 -   The application allows to track an individuals cash flow statements by accounting for their income and expenses.
--   This would help individual budget their expenditures and ensure they don't overspend and see how much they have. 
+-   This would help individual budget their expenditures and see how much they have, hence preventing them from overspending. 
 -   It would provide an easy-to-use platform to monitor their financial transactions. 
 
 2.
@@ -15,7 +15,7 @@
 3. 
 - Finance is something I am interested in and figuring out a way to include that in my project would make it 
 more enjoyable through the term.
-- This project has scope to grow as well as my skillset grows, hence, I could continue improving this project even after, 
+- This project has scope to grow as my skill set grows, hence, I could continue improving this project even after 
 the course is done
   
 

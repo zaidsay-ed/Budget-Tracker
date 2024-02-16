@@ -6,6 +6,7 @@ public class Expense implements MonetaryType {
     private String description;         // Description of the expense that was incurred
     private double amount;              // amount of expense incurred
 
+    //REQUIRES: amount > 0, date in format(dd/mm/yyyy)
     public Expense(String date, String description, double amount) {
         this.date = date;
         this.description = description;
@@ -27,7 +28,7 @@ public class Expense implements MonetaryType {
         return amount;
     }
 
-
+    //EFFECTS: gets cash statement
     @Override
     public String getStatement() {
         return date + "\t\t\t " + description + "\t\t\t " + amount;

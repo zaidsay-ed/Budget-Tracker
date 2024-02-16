@@ -6,6 +6,7 @@ public class Income extends Expense {
     private String description;         // Description of the income that was entered in
     private double amount;              // Amount that has been attained
 
+    //REQUIRES: amount > 0, date in format(dd/mm/yyyy)
     public Income(String date, String description, double amount) {
         super(date, description, amount);
         this.date = date;
