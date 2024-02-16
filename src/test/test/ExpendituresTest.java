@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ExpendituresTest {
-
+    //test for Expenses class
     private Expenditures expenses;
     private Expense e1;
     private Expense e2;

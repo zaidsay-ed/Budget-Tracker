@@ -8,12 +8,13 @@ import model.Income;
 import java.util.Scanner;
 
 public class NewStatement {
-
+// prints new cash statement
     private static Earnings earning = new Earnings();
     private static Expenditures expenses = new Expenditures();
 
     public NewStatement() {
     }
+
 
     public static void addStatement(Scanner sc, String s) {
         System.out.println("Enter Date (DD/MM/YYYY)");

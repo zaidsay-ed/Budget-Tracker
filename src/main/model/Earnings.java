@@ -41,7 +41,8 @@ public class Earnings {
         return sum;
     }
 
-
+    // REQUIRES: earnings.size > 0
+    // EFFECTS: gets individual earning from list
     public Income getEarning(int i) {
         return earnings.get(i);
     }

@@ -17,15 +17,18 @@ public class Expenditures {
         expenses.add(e);
     }
 
+
     // EFFECTS: represents the number of expenses currently in the list.
     public int getNumItems() {
         return expenses.size();
     }
 
+
     // EFFECTS: true if the list is empty, false otherwise
     public boolean isEmpty() {
         return expenses.size() == 0;
     }
+
 
     // EFFECTS: gives total expenses in list
     public double getTotalExpense() {
@@ -37,7 +40,8 @@ public class Expenditures {
     }
 
 
-
+    // REQUIRES: expenses.size > 0
+    // EFFECTS: gets individual expenses from list
     public Expense getExpense(int i) {
         return expenses.get(i);
     }

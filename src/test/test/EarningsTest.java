@@ -8,7 +8,7 @@ import model.Earnings;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EarningsTest {
-
+    //test for Earnings class
     private Earnings earnings;
     private Income i1;
     private Income i2;
