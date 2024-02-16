@@ -40,18 +40,22 @@ public class NewStatement {
 
     public static void printCashflow() {
         System.out.println("Cash Inflow :");
-        System.out.println("************************************");
+        System.out.println("");
+        System.out.println(" Date\t\t\t Description\t\t\t Amount");
+        System.out.println("************************************************");
         earning.printEarnings();
-        System.out.println("************************************");
+        System.out.println("************************************************");
         System.out.println("");
         System.out.println("Cash Outflow :");
-        System.out.println("************************************");
-        expenses.printExpenses();
-        System.out.println("************************************");
         System.out.println("");
-        System.out.println("************************************");
+        System.out.println(" Date\t\t\t Description\t\t\t Amount");
+        System.out.println("************************************************");
+        expenses.printExpenses();
+        System.out.println("************************************************");
+        System.out.println("");
+        System.out.println("************************************************");
         viewBalance();
-        System.out.println("************************************");
+        System.out.println("************************************************");
     }
 
 }

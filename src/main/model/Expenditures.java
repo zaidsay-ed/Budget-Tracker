@@ -29,7 +29,7 @@ public class Expenditures {
 
     // EFFECTS: gives total expenses in list
     public double getTotalExpense() {
-        int sum = 0;
+        double sum = 0;
         for (Expense expense : expenses) {
             sum += expense.getAmount();
         }

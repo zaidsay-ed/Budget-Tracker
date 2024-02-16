@@ -30,7 +30,7 @@ public class Expense implements MonetaryType {
 
     @Override
     public String getStatement() {
-        return "Date: " + date + ", Description: " + description + ", Amount: $" + amount;
+        return date + "\t\t\t " + description + "\t\t\t " + amount;
     }
 
 }

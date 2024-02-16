@@ -13,6 +13,12 @@ public class Earnings {
     }
 
 
+    // EFFECTS: true if the list is empty, false otherwise
+    public boolean isEmpty() {
+        return earnings.size() == 0;
+    }
+
+
     // MODIFIES: this
     // EFFECTS: adds earning to the end of the list.
     public void addEarning(Income i) {
@@ -25,14 +31,10 @@ public class Earnings {
         return earnings.size();
     }
 
-    // EFFECTS: true if the list is empty, false otherwise
-    public boolean isEmpty() {
-        return earnings.size() == 0;
-    }
 
     // EFFECTS: gives total earnings in list
     public double getTotalEarnings() {
-        int sum = 0;
+        double sum = 0;
         for (Income earning : earnings) {
             sum += earning.getAmount();
         }

@@ -13,5 +13,9 @@ public class Income extends Expense {
         this.amount = amount;
     }
 
+    @Override
+    public double getAmount() {
+        return amount;
+    }
 
 }
