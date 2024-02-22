@@ -30,6 +30,7 @@ public class Main {
 
 
     private static void printMenu() {
+        System.out.println("Please List the correct corresponding Number");
         System.out.println("1. Add Earnings");
         System.out.println("2. Add Expenses");
         System.out.println("3. View Balance");

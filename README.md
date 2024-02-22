@@ -26,3 +26,5 @@ the course is done
 - As a user, I want to input my income and see how my purse is affected.
 - As a user, I want to input my expenses and see how my purse is affected.
 - As a user, I want to be able to view my purse balance after each activity.
+- As a user, I want to be able to save my expenses and income statements.
+- As a user, I want to be able to load the previous statements and view my budget.
