@@ -15,7 +15,7 @@ public class NewStatement {
     public NewStatement() {
     }
 
-
+    //adds cash flow statement to the ui
     public static void addStatement(Scanner sc, String s) {
         System.out.println("Enter Date (DD/MM/YYYY)");
         String date = sc.next();
@@ -34,11 +34,14 @@ public class NewStatement {
         }
     }
 
+    //adds view balance to the ui
     public static void viewBalance() {
         double diff = earning.getTotalEarnings() - expenses.getTotalExpense();
         System.out.println("Balance : " + diff);
     }
 
+
+    //adds cash flow to the ui
     public static void printCashflow() {
         System.out.println("Cash Inflow :");
         System.out.println("");
@@ -59,12 +62,14 @@ public class NewStatement {
         System.out.println("************************************************");
     }
 
+    //adds earnings to the ui
     public static void printEarnings() {
         for (int i = 0; i < earning.getNumItems(); i++) {
             System.out.println(earning.getEarning(i).getStatement());
         }
     }
 
+    //adds expenses to the ui
     public static void printExpenses() {
         for (int i = 0; i < expenses.getNumItems(); i++) {
             System.out.println(expenses.getExpense(i).getStatement());

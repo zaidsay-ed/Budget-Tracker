@@ -28,7 +28,7 @@ public class Main {
     }
 
 
-
+    //adds Menu to the Main class
     private static void printMenu() {
         System.out.println("Please List the correct corresponding Number");
         System.out.println("1. Add Earnings");
