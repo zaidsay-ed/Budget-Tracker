@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONObject;
+
 public class Income extends Expense {
 // Represent different types of cash inflow for an individual
     private String date;                // keep track of date of income
@@ -18,5 +20,6 @@ public class Income extends Expense {
     public double getAmount() {
         return amount;
     }
+
 
 }

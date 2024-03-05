@@ -1,9 +1,15 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistance.Writable;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
-public class Expenditures {
+public class Expenditures implements Writable {
 //Creates list of expenses to track
     private ArrayList<Expense> expenses;  // list of expenses
 
@@ -46,4 +52,25 @@ public class Expenditures {
         return expenses.get(i);
     }
 
+    // EFFECTS: returns an unmodifiable list of thingies in this workroom
+    public List<Expense> getExpenses() {
+        return Collections.unmodifiableList(expenses);
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("expenses", expendituresToJson());
+        return json;
+    }
+
+    // EFFECTS: returns expenses in this cash flow as a JSON array
+    private JSONArray expendituresToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Expense exp : expenses) {
+            jsonArray.put(exp.toJson());
+        }
+        return jsonArray;
+    }
 }

@@ -1,0 +1,14 @@
+{
+  "expenses": [
+    {
+      "date": "20/01/2000",
+      "description": "Grocery",
+      "amount" : 100.0
+    },
+    {
+      "date": "25/01/2000",
+      "description": "Rent",
+      "amount" : 300.0
+    }
+  ]
+}

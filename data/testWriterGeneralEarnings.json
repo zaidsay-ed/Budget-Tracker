@@ -1,0 +1,12 @@
+{"earnings": [
+    {
+        "date": "20/01/2000",
+        "amount": 100,
+        "description": "Salary"
+    },
+    {
+        "date": "25/01/2000",
+        "amount": 300,
+        "description": "Stock"
+    }
+]}

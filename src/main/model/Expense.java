@@ -1,6 +1,9 @@
 package model;
 
-public class Expense implements MonetaryType {
+import org.json.JSONObject;
+import persistance.Writable;
+
+public class Expense implements MonetaryType, Writable {
 // Represents different forms of cash outflow incurred by an individual
     private String date;                // keep track of date of expense
     private String description;         // Description of the expense that was incurred
@@ -35,6 +38,12 @@ public class Expense implements MonetaryType {
     }
 
 
-
-
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("date", date);
+        json.put("description", description);
+        json.put("amount", amount);
+        return json;
+    }
 }

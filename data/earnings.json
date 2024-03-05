@@ -1,0 +1,19 @@
+{
+  "earnings": [
+    {
+      "date": "20/01/2000",
+      "description": "Salary",
+      "amount" : 100.0
+    },
+    {
+      "date": "25/01/2000",
+      "description": "Stock",
+      "amount" : 300.0
+    },
+    {
+      "date": "01/02/2000",
+      "description": "Business",
+      "amount" : 250.0
+    }
+  ]
+}

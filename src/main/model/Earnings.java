@@ -1,9 +1,15 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistance.Writable;
 
-public class Earnings {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Earnings implements Writable {
     //Creates list of earnings to track
     private ArrayList<Income> earnings; // list of earnings
 
@@ -45,5 +51,28 @@ public class Earnings {
     // EFFECTS: gets individual earning from list
     public Income getEarning(int i) {
         return earnings.get(i);
+    }
+
+    // EFFECTS: returns an unmodifiable list of thingies in this workroom
+    public List<Income> getEarning() {
+        return Collections.unmodifiableList(earnings);
+    }
+
+    // makes it to json
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("earnings", earningsToJson());
+        return json;
+    }
+
+    // EFFECTS: returns earnings in this cashflow as a JSON array
+    private JSONArray earningsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Income i : earnings) {
+            jsonArray.put(i.toJson());
+        }
+        return jsonArray;
     }
 }
