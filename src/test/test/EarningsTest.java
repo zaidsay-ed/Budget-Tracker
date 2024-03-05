@@ -1,5 +1,6 @@
 package test;
 
+import model.Expense;
 import model.Income;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,6 +36,7 @@ class EarningsTest {
         earnings.addEarning(i3);
         assertEquals(6000, earnings.getTotalEarnings());
         assertEquals(i1, earnings.getEarning(0));
+        assertEquals(3 , earnings.getEarnings().size());
     }
 
 }

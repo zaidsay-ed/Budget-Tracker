@@ -53,8 +53,8 @@ public class Earnings implements Writable {
         return earnings.get(i);
     }
 
-    // EFFECTS: returns an unmodifiable list of thingies in this workroom
-    public List<Income> getEarning() {
+    // EFFECTS: returns an unmodifiable list of expenses in this workroom
+    public List<Income> getEarnings() {
         return Collections.unmodifiableList(earnings);
     }
 

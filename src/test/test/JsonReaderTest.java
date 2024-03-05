@@ -77,7 +77,7 @@ public class JsonReaderTest extends JsonTest{
         JsonReader reader = new JsonReader("./data/testReaderGeneralEarnings.json");
         try {
             Earnings inc = reader.readEarnings();
-            List<Income> earnings = inc.getEarning();
+            List<Income> earnings = inc.getEarnings();
             assertEquals(2, earnings.size());
             checkExpense("20/01/2000", "Salary", 100.0, earnings.get(0));
             checkExpense("25/01/2000", "Stock", 300.0, earnings.get(1));

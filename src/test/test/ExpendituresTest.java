@@ -25,7 +25,7 @@ public class ExpendituresTest {
     }
 
     @Test
-    void testEarning(){
+    void testExpenses(){
         assertTrue(expenses.isEmpty());
         expenses.addExpense(e1);
         assertEquals(1000, expenses.getTotalExpense());
@@ -37,6 +37,7 @@ public class ExpendituresTest {
         expenses.addExpense(e3);
         assertEquals(6000, expenses.getTotalExpense());
         assertEquals(e1, expenses.getExpense(0));
+        assertEquals(3, expenses.getExpenses().size());
     }
 
 }
