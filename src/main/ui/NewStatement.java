@@ -55,7 +55,7 @@ public class NewStatement {
     //EFFECTS: adds view balance to the ui
     public static void viewBalance() {
         double diff = earning.getTotalEarnings() - expenses.getTotalExpense();
-        System.out.println("Balance : " + diff);
+        System.out.println("Balance: " + diff);
     }
 
 
@@ -64,20 +64,21 @@ public class NewStatement {
         System.out.println("Cash Inflow :");
         System.out.println("");
         System.out.println(" Date\t\t\t Description\t\t\t Amount");
-        System.out.println("************************************************");
+        System.out.println("------------------------------------------------");
         printEarnings();
-        System.out.println("************************************************");
+        System.out.println("------------------------------------------------");
+        System.out.println("");
         System.out.println("");
         System.out.println("Cash Outflow :");
         System.out.println("");
         System.out.println(" Date\t\t\t Description\t\t\t Amount");
-        System.out.println("************************************************");
+        System.out.println("------------------------------------------------");
         printExpenses();
-        System.out.println("************************************************");
+        System.out.println("------------------------------------------------");
         System.out.println("");
-        System.out.println("************************************************");
+        System.out.println("");
         viewBalance();
-        System.out.println("************************************************");
+        System.out.println("_________________________________________________");
     }
 
     //EFFECTS: adds earnings to the ui
@@ -103,9 +104,9 @@ public class NewStatement {
             jsonWriterInc.writeInc(earning);
             jsonWriterExp.close();
             jsonWriterInc.close();
-            System.out.println("Saved to " + EXP_STORE + " and " + INC_STORE);
+            System.out.println("Saved Budget Statements");
         } catch (FileNotFoundException e) {
-            System.out.println("Unable to write to file: " + EXP_STORE + ", " + INC_STORE);
+            System.out.println("Unable to write to files: " + EXP_STORE + ", " + INC_STORE);
         }
     }
 
@@ -115,9 +116,9 @@ public class NewStatement {
         try {
             expenses = jsonReaderExp.readExpenses();
             earning = jsonReaderInc.readEarnings();
-            System.out.println("Loaded Statement from " + EXP_STORE + " and " + INC_STORE);
+            System.out.println("Loaded Previous Statements");
         } catch (IOException e) {
-            System.out.println("Unable to read from file: " + EXP_STORE + ", " + INC_STORE);
+            System.out.println("Unable to read from files: " + EXP_STORE + ", " + INC_STORE);
         }
     }
 }

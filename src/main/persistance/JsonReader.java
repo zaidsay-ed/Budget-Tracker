@@ -52,7 +52,7 @@ public class JsonReader {
         return content.toString();
     }
 
-
+    // EFFECTS: parses Expenses from JSON object and returns it
     public Expenditures parseExpenditures(JSONObject jsonObject) {
         Expenditures exp = new Expenditures();
         addExpenses(exp, jsonObject);
@@ -78,7 +78,8 @@ public class JsonReader {
         Expense ex = new Expense(date, description, amount);
         exp.addExpense(ex);
     }
-    
+
+    // EFFECTS: parses Earnings from JSON object and returns it
     public Earnings parseEarnings(JSONObject jsonObject) {
         Earnings earn = new Earnings();
         addEarnings(earn, jsonObject);

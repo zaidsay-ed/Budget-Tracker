@@ -8,6 +8,7 @@ public class Main {
 //Budget Tracker to track expenses and income.
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        new NewStatement();
         while (true) {
             System.out.println("\n ************ Budget Tracker Menu ************");
             printMenu();
