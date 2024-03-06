@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class JsonReaderTest extends JsonTest{
+    //test for JSON Reader
     @Test
     void testReaderNonExistentFileExp() {
         JsonReader reader = new JsonReader("./data/noSuchFile.json");

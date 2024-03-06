@@ -58,7 +58,7 @@ public class Earnings implements Writable {
         return Collections.unmodifiableList(earnings);
     }
 
-    // makes it to json
+    //EFFECTS: adds earnings in Json Object
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

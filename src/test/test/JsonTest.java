@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JsonTest {
+    //test for JSON
+
     protected void checkExpense(String date, String description, Double amt, Expense exp) {
         assertEquals(date, exp.getDate());
         assertEquals(description, exp.getDescription());

@@ -1,7 +1,7 @@
 package model;
 
 public interface MonetaryType {
-
+//interface for different types of monetary value
     public String getDate();
 
     public String getDescription();

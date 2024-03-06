@@ -57,6 +57,7 @@ public class Expenditures implements Writable {
         return Collections.unmodifiableList(expenses);
     }
 
+    //EFFECTS: adds expenses in Json Object
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

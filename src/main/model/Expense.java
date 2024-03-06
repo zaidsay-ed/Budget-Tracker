@@ -38,6 +38,7 @@ public class Expense implements MonetaryType, Writable {
     }
 
 
+    //EFFECTS: adds expense object in Json Object
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

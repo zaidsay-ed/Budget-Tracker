@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 public class JsonWriter {
+// writes budget tracker to JSON data stored in file
 
     private static final int TAB = 4;
     private PrintWriter writer;
