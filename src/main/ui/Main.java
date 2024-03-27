@@ -22,27 +22,10 @@ public class Main {
     private JButton exitButton;
 
     public Main() {
-
-        frame.add(panel, BorderLayout.CENTER);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Budget Tracker");
-        //frame.pack();
-        frame.setSize(470,500);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        addEarningsButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Add Earnings clicked");
-            }
-        }
-        );
-
     }
 
 
     public static void main(String[] args) {
-        new Main();
         Scanner sc = new Scanner(System.in);
         new NewStatement();
         while (true) {

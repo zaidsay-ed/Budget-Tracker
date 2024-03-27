@@ -76,7 +76,7 @@ public class Gui extends JFrame implements ActionListener {
     }
 
     private void addLogo() {
-        URL imageURL = getClass().getResource("Screenshot 2024-03-22 at 11.51.29 AM.png");
+        URL imageURL = getClass().getResource("coin.png");
         ImageIcon icon = new ImageIcon(imageURL);
         Image scaledImage = icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(scaledImage);
