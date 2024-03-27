@@ -61,6 +61,7 @@ public class Gui extends JFrame implements ActionListener {
         setResizable(false);
     }
 
+    //EFFECTS: initializing panels and setting color and position
     private void panel() {
         mainPanel = new JPanel(new BorderLayout());
         buttonPanel = new JPanel(new FlowLayout());
@@ -75,6 +76,7 @@ public class Gui extends JFrame implements ActionListener {
         mainPanel.add(buttonPanel, BorderLayout.CENTER);
     }
 
+    //EFFECTS: adding logo to panel
     private void addLogo() {
         URL imageURL = getClass().getResource("coin.png");
         ImageIcon icon = new ImageIcon(imageURL);
@@ -89,6 +91,7 @@ public class Gui extends JFrame implements ActionListener {
         new Gui();
     }
 
+    //EFFECTS: initializing JSON, earnings and expenses
     private static void init() {
         earning = new Earnings();
         expenses = new Expenditures();
