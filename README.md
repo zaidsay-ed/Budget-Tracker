@@ -28,3 +28,14 @@ the course is done
 - As a user, I want to be able to view my purse balance after each activity.
 - As a user, I want to be able to save my expenses and income statements.
 - As a user, I want to be able to load the previous statements and view my budget.
+
+
+
+### *Instructions for Grader*
+- You can generate the first required action related to the user story "track my expenses" by clicking the button
+  labelled view cashflow.
+- You can generate the second and third required action related to the user story "input my income and expense" by 
+  clicking the button labelled add earning and add expense respectively.
+- You can locate my visual component by seeing the budget tracker logo at the front of the page.
+- You can save the state of my application by clicking the button labelled save file.
+- You can reload the state of my application by clicking the button labelled load file.

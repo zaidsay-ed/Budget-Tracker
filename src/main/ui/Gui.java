@@ -14,13 +14,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Scanner;
+import java.net.URL;
 
 
 public class Gui extends JFrame implements ActionListener {
-    private JLabel label;
-    private JTextField field;
-    private Scanner sc;
+// GUI for Budget Tracker
     private static Earnings earning;
     private static Expenditures expenses;
     private double balance;
@@ -31,30 +29,77 @@ public class Gui extends JFrame implements ActionListener {
     private static final String EXP_STORE = "./data/expenditures.json";
 
     private static final String INC_STORE = "./data/earnings.json";
+    JPanel mainPanel;
+    JPanel buttonPanel;
+    JPanel logoPanel;
+    Color goldColor = new Color(255, 215, 0);
     JButton addEarningsButton;
     JButton addExpensesButton;
     JButton viewBalanceButton;
     JButton viewCashFlowButton;
     JButton saveRecordButton;
     JButton loadRecordButton;
-    JButton exitButton;
 
     // EFFECTS: runs the teller application
     public Gui() {
         super("Budget Tracker");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setPreferredSize(new Dimension(400, 275));
+        ((JPanel) getContentPane()).setBorder(new EmptyBorder(4, 6, 5, 6));
 
-        setPreferredSize(new Dimension(400, 250));
-        ((JPanel) getContentPane()).setBorder(new EmptyBorder(13, 13, 13, 13));
-        setLayout(new FlowLayout());
+        panel();
+
+        init();
+
+        addBudget();
+        viewBudget();
+        memory();
+        pack();
+        getContentPane().add(mainPanel);
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setResizable(false);
+    }
+
+    private void panel() {
+        mainPanel = new JPanel(new BorderLayout());
+        buttonPanel = new JPanel(new FlowLayout());
+        logoPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         addButtons();
-        //btn.setActionCommand("myButton");
+        addLogo();
+        mainPanel.setLayout(new GridLayout(2, 3, 10, 10));
+        buttonPanel.setBackground(Color.BLACK);
+        mainPanel.setBackground(Color.BLACK);
+        logoPanel.setBackground(Color.BLACK);
+        mainPanel.add(logoPanel, BorderLayout.NORTH);
+        mainPanel.add(buttonPanel, BorderLayout.CENTER);
+    }
+
+    private void addLogo() {
+        URL imageURL = getClass().getResource("Screenshot 2024-03-22 at 11.51.29 AM.png");
+        ImageIcon icon = new ImageIcon(imageURL);
+        Image scaledImage = icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+        JLabel logoLabel = new JLabel(scaledIcon);
+        add(logoLabel);
+        logoPanel.add(logoLabel);
+    }
+
+    public static void main(String[] args) {
+        new Gui();
+    }
+
+    private static void init() {
         earning = new Earnings();
         expenses = new Expenditures();
         jsonWriterExp = new JsonWriter(EXP_STORE);
         jsonWriterInc = new JsonWriter(INC_STORE);
         jsonReaderExp = new JsonReader(EXP_STORE);
         jsonReaderInc = new JsonReader(INC_STORE);
+    }
+
+    //EFFECTS: Functionality to add expense and earning buttons
+    private void addBudget() {
         addEarningsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -67,6 +112,10 @@ public class Gui extends JFrame implements ActionListener {
                 addStatement(0);
             }
         });
+    }
+
+    //EFFECTS: Functionality to view balance and cashflow button
+    private void viewBudget() {
         viewBalanceButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -79,6 +128,10 @@ public class Gui extends JFrame implements ActionListener {
                 printCashflow();
             }
         });
+    }
+
+    //EFFECTS: Functionality for save and load budget buttons
+    private void memory() {
         saveRecordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -91,13 +144,10 @@ public class Gui extends JFrame implements ActionListener {
                 loadData();
             }
         });
-        pack();
-        setLocationRelativeTo(null);
-        setVisible(true);
-        setResizable(false);
     }
 
-    // Method to add earnings
+
+    //EFFECTS: Method to add earnings and expenses
     private void addStatement(int i) {
         String date = JOptionPane.showInputDialog("Enter Date (DD/MM/YYYY):");
         String description = JOptionPane.showInputDialog("Enter Earning Description:");
@@ -124,15 +174,13 @@ public class Gui extends JFrame implements ActionListener {
         }
     }
 
-    public static void main(String[] args) {
-        new Gui();
-    }
-
+    //EFFECTS: Method to view balance
     private void viewBalance() {
         JOptionPane.showMessageDialog(this, "Current Balance: $" + balance,
                 "Balance", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    //EFFECTS: Method to print cashflow
     private void printCashflow() {
         StringBuilder cashFlowMessage = new StringBuilder();
 
@@ -146,8 +194,9 @@ public class Gui extends JFrame implements ActionListener {
         cashFlowMessage.append("-------------------------------------------------------------------------"
                 + "-----------\n");
         cashFlowMessage.append(printExpenses());
-        cashFlowMessage.append("\n------------------------------------------------\n");
-        cashFlowMessage.append("Balance: $" + balance);
+        cashFlowMessage.append("\n\nBalance: $" + balance);
+        cashFlowMessage.append("\n-------------------------------------------------------------------------"
+                + "-----------\n");
 
         JTextArea textArea = new JTextArea(cashFlowMessage.toString());
         textArea.setEditable(false);
@@ -162,6 +211,7 @@ public class Gui extends JFrame implements ActionListener {
                 "Cash Flow", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    //EFFECTS: Method to print all earnings stored
     private String printEarnings() {
         StringBuilder earningsMessage = new StringBuilder();
         for (int i = 0; i < earning.getNumItems(); i++) {
@@ -171,6 +221,7 @@ public class Gui extends JFrame implements ActionListener {
         return earningsMessage.toString();
     }
 
+    //EFFECTS: Method to print all expenses stored
     private String printExpenses() {
         StringBuilder expensesMessage = new StringBuilder();
         for (int i = 0; i < expenses.getNumItems(); i++) {
@@ -180,6 +231,7 @@ public class Gui extends JFrame implements ActionListener {
         return expensesMessage.toString();
     }
 
+    //EFFECTS: Method to save data
     private void saveData() {
         try {
             jsonWriterExp.open();
@@ -196,6 +248,7 @@ public class Gui extends JFrame implements ActionListener {
         }
     }
 
+    //EFFECTS: Method to load data
     private void loadData() {
         try {
             expenses = jsonReaderExp.readExpenses();
@@ -207,6 +260,7 @@ public class Gui extends JFrame implements ActionListener {
         }
     }
 
+    //EFFECTS: Method to initialize and add all buttons
     private void addButtons() {
         addEarningsButton = new JButton("Add Earnings");
         addExpensesButton = new JButton("Add Expenses");
@@ -214,19 +268,28 @@ public class Gui extends JFrame implements ActionListener {
         viewCashFlowButton = new JButton("View Cash Flow");
         saveRecordButton = new JButton("Save Record");
         loadRecordButton = new JButton("Load Record");
-        exitButton = new JButton("Exit");
-        add(addEarningsButton);
-        add(addExpensesButton);
-        add(viewBalanceButton);
-        add(viewCashFlowButton);
-        add(saveRecordButton);
-        add(loadRecordButton);
-        add(exitButton);
+
+        addEarningsButton.setBackground(goldColor);
+        addExpensesButton.setBackground(goldColor);
+        viewBalanceButton.setBackground(goldColor);
+        viewCashFlowButton.setBackground(goldColor);
+        saveRecordButton.setBackground(goldColor);
+        loadRecordButton.setBackground(goldColor);
+
+        buttonPanel.add(addEarningsButton);
+        buttonPanel.add(addExpensesButton);
+        buttonPanel.add(viewBalanceButton);
+        buttonPanel.add(viewCashFlowButton);
+        buttonPanel.add(saveRecordButton);
+        buttonPanel.add(loadRecordButton);
     }
 
+    //EFFECTS: Method to initialize abstract method
     @Override
     public void actionPerformed(ActionEvent e) {
 
     }
+
 }
 
+//citations : https://www.shutterstock.com/search/budgeting-logo
