@@ -1,16 +1,51 @@
 package ui;
 
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
 //Budget Tracker to track expenses and income.
+
+    private JFrame frame;
+    private JPanel panel;
+    private JButton addEarningsButton;
+    private JButton addExpensesButton;
+    private JButton viewBalanceButton;
+    private JButton viewCashFlowButton;
+    private JButton saveRecordButton;
+    private JButton loadRecordButton;
+    private JButton exitButton;
+
+    public Main() {
+
+        frame.add(panel, BorderLayout.CENTER);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setTitle("Budget Tracker");
+        //frame.pack();
+        frame.setSize(470,500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        addEarningsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, "Add Earnings clicked");
+            }
+        }
+        );
+
+    }
+
+
     public static void main(String[] args) {
+        new Main();
         Scanner sc = new Scanner(System.in);
         new NewStatement();
         while (true) {
-            System.out.println("\n ************ Budget Tracker Menu ************");
             printMenu();
             int c = sc.nextInt();
             switch (c) {
@@ -35,6 +70,7 @@ public class Main {
 
     //EFFECTS: adds Menu to the Main class
     private static void printMenu() {
+        System.out.println("\n ************ Budget Tracker Menu ************");
         System.out.println("Please List the correct corresponding Number");
         System.out.println("1. Add Earnings");
         System.out.println("2. Add Expenses");

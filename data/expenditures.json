@@ -1,1 +1,5 @@
-{"expenses": []}
+{"expenses": [{
+    "date": "45/09/6007",
+    "amount": 509,
+    "description": "rjn"
+}]}
