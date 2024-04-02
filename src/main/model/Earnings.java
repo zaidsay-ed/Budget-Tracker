@@ -29,6 +29,7 @@ public class Earnings implements Writable {
     // EFFECTS: adds earning to the end of the list.
     public void addEarning(Income i) {
         earnings.add(i);
+        EventLog.getInstance().logEvent(new Event("Earnings Added"));
     }
 
 
@@ -44,6 +45,7 @@ public class Earnings implements Writable {
         for (Income earning : earnings) {
             sum += earning.getAmount();
         }
+        EventLog.getInstance().logEvent(new Event("Viewed Balance"));
         return sum;
     }
 

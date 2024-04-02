@@ -1,9 +1,6 @@
 package persistance;
 
-import model.Earnings;
-import model.Expenditures;
-import model.Expense;
-import model.Income;
+import model.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -27,6 +24,7 @@ public class JsonReader {
     // EFFECTS: reads expenses from file and returns it;
     // throws IOException if an error occurs reading data from file
     public Expenditures readExpenses() throws IOException {
+        EventLog.getInstance().logEvent(new Event("Loaded Cash Flow Statement"));
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
         return parseExpenditures(jsonObject);

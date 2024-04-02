@@ -1,6 +1,8 @@
 package persistance;
 
 import model.Earnings;
+import model.Event;
+import model.EventLog;
 import model.Expenditures;
 import org.json.JSONObject;
 
@@ -30,6 +32,7 @@ public class JsonWriter {
     // MODIFIES: this
     // EFFECTS: writes JSON representation of expenditure to file
     public void writeExp(Expenditures exp) {
+        EventLog.getInstance().logEvent(new Event("Saved Cash Flow Statement"));
         JSONObject json = exp.toJson();
         saveToFile(json.toString(TAB));
     }

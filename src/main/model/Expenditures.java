@@ -21,6 +21,7 @@ public class Expenditures implements Writable {
     // EFFECTS: adds expense to the end of the list.
     public void addExpense(Expense e) {
         expenses.add(e);
+        EventLog.getInstance().logEvent(new Event("Expense Added"));
     }
 
 
