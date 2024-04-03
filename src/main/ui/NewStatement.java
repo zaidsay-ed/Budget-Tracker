@@ -1,5 +1,6 @@
 package ui;
 
+
 import model.Earnings;
 import model.Expenditures;
 import model.Expense;

@@ -6,13 +6,11 @@ import persistance.Writable;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Earnings implements Writable {
     //Creates list of earnings to track
     private ArrayList<Income> earnings; // list of earnings
-
 
     public Earnings() {
         earnings = new ArrayList<Income>();
@@ -45,9 +43,9 @@ public class Earnings implements Writable {
         for (Income earning : earnings) {
             sum += earning.getAmount();
         }
-        EventLog.getInstance().logEvent(new Event("Viewed Balance"));
         return sum;
     }
+
 
     // REQUIRES: earnings.size > 0
     // EFFECTS: gets individual earning from list
@@ -77,4 +75,6 @@ public class Earnings implements Writable {
         }
         return jsonArray;
     }
+
+
 }

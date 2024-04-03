@@ -39,3 +39,10 @@ the course is done
 - You can locate my visual component by seeing the budget tracker logo at the front of the page.
 - You can save the state of my application by clicking the button labelled save file.
 - You can reload the state of my application by clicking the button labelled load file.
+
+
+### *Phase 4: Task 2*
+- Loaded Cash Flow Statement
+- Earnings Added
+- Expense Added
+- Saved Cash Flow Statement

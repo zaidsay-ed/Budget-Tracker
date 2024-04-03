@@ -75,4 +75,5 @@ public class Expenditures implements Writable {
         }
         return jsonArray;
     }
+
 }

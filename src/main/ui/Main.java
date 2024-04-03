@@ -1,25 +1,11 @@
 package ui;
 
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
 //Budget Tracker to track expenses and income.
 
-    private JFrame frame;
-    private JPanel panel;
-    private JButton addEarningsButton;
-    private JButton addExpensesButton;
-    private JButton viewBalanceButton;
-    private JButton viewCashFlowButton;
-    private JButton saveRecordButton;
-    private JButton loadRecordButton;
-    private JButton exitButton;
 
     public Main() {
     }

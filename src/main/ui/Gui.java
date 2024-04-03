@@ -1,9 +1,7 @@
 package ui;
 
-import model.Earnings;
-import model.Expenditures;
-import model.Expense;
-import model.Income;
+import model.*;
+import model.Event;
 import persistance.JsonReader;
 import persistance.JsonWriter;
 
@@ -21,7 +19,6 @@ public class Gui extends JFrame implements ActionListener {
 // GUI for Budget Tracker
     private static Earnings earning;
     private static Expenditures expenses;
-    private double balance;
     private static JsonWriter jsonWriterExp;
     private static JsonWriter jsonWriterInc;
     private static JsonReader jsonReaderExp;
@@ -39,6 +36,7 @@ public class Gui extends JFrame implements ActionListener {
     JButton viewCashFlowButton;
     JButton saveRecordButton;
     JButton loadRecordButton;
+    JButton exitButton;
 
     // EFFECTS: runs the teller application
     public Gui() {
@@ -54,6 +52,7 @@ public class Gui extends JFrame implements ActionListener {
         addBudget();
         viewBudget();
         memory();
+        exit();
         pack();
         getContentPane().add(mainPanel);
         setLocationRelativeTo(null);
@@ -149,6 +148,17 @@ public class Gui extends JFrame implements ActionListener {
         });
     }
 
+    //EFFECTS: Functionality to exit
+    private void exit() {
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                printLog(EventLog.getInstance());
+                System.exit(0);
+            }
+        });
+    }
+
 
     //EFFECTS: Method to add earnings and expenses
     private void addStatement(int i) {
@@ -158,7 +168,6 @@ public class Gui extends JFrame implements ActionListener {
         if (i == 1) {
             try {
                 double amount = Double.parseDouble(amountStr);
-                balance += amount;
                 earning.addEarning(new Income(date, description, amount));
                 JOptionPane.showMessageDialog(this, "Earnings Added Successfully!");
             } catch (NumberFormatException e) {
@@ -168,7 +177,6 @@ public class Gui extends JFrame implements ActionListener {
         if (i == 0) {
             try {
                 double amount = Double.parseDouble(amountStr);
-                balance -= amount;
                 expenses.addExpense(new Expense(date, description, amount));
                 JOptionPane.showMessageDialog(this, "Expense Added Successfully!");
             } catch (NumberFormatException e) {
@@ -179,14 +187,19 @@ public class Gui extends JFrame implements ActionListener {
 
     //EFFECTS: Method to view balance
     private void viewBalance() {
-        JOptionPane.showMessageDialog(this, "Current Balance: $" + balance,
+        JOptionPane.showMessageDialog(this, "Current Balance: $" + balance(),
                 "Balance", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    //EFFECTS: Calculates balance
+    private double balance() {
+        double balance = earning.getTotalEarnings() - expenses.getTotalExpense();
+        return balance;
     }
 
     //EFFECTS: Method to print cashflow
     private void printCashflow() {
         StringBuilder cashFlowMessage = new StringBuilder();
-
         cashFlowMessage.append("Cash Inflow:\n");
         cashFlowMessage.append(String.format("%-15s%-40s%-15s\n", "Date", "Description", "Amount"));
         cashFlowMessage.append("-------------------------------------------------------------------------"
@@ -197,7 +210,7 @@ public class Gui extends JFrame implements ActionListener {
         cashFlowMessage.append("-------------------------------------------------------------------------"
                 + "-----------\n");
         cashFlowMessage.append(printExpenses());
-        cashFlowMessage.append("\n\nBalance: $" + balance);
+        cashFlowMessage.append("\n\nBalance: $" + balance());
         cashFlowMessage.append("\n-------------------------------------------------------------------------"
                 + "-----------\n");
 
@@ -263,6 +276,12 @@ public class Gui extends JFrame implements ActionListener {
         }
     }
 
+    private void printLog(EventLog el) {
+        for (Event next : el) {
+            System.out.println(next.getDate() + ": " + next.getDescription() + "\n\n");
+        }
+    }
+
     //EFFECTS: Method to initialize and add all buttons
     private void addButtons() {
         addEarningsButton = new JButton("Add Earnings");
@@ -271,6 +290,7 @@ public class Gui extends JFrame implements ActionListener {
         viewCashFlowButton = new JButton("View Cash Flow");
         saveRecordButton = new JButton("Save Record");
         loadRecordButton = new JButton("Load Record");
+        exitButton = new JButton("Quit");
 
         addEarningsButton.setBackground(goldColor);
         addExpensesButton.setBackground(goldColor);
@@ -278,6 +298,7 @@ public class Gui extends JFrame implements ActionListener {
         viewCashFlowButton.setBackground(goldColor);
         saveRecordButton.setBackground(goldColor);
         loadRecordButton.setBackground(goldColor);
+        exitButton.setBackground(goldColor);
 
         buttonPanel.add(addEarningsButton);
         buttonPanel.add(addExpensesButton);
@@ -285,6 +306,7 @@ public class Gui extends JFrame implements ActionListener {
         buttonPanel.add(viewCashFlowButton);
         buttonPanel.add(saveRecordButton);
         buttonPanel.add(loadRecordButton);
+        buttonPanel.add(exitButton);
     }
 
     //EFFECTS: Method to initialize abstract method
