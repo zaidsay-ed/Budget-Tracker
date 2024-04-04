@@ -46,3 +46,10 @@ the course is done
 - Earnings Added
 - Expense Added
 - Saved Cash Flow Statement
+
+
+### *Phase 4: Task 3*
+- I would possibily try simplifying the number of classes and objects I am using to store data, I feel it could be done 
+in a more efficient and systematic way. 
+- Make the program more robust by adding error handling for more scenarios to ensure data integrity, right now the date 
+input is not very robust and could accept any String.
