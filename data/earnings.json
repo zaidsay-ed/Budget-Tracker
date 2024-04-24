@@ -1,12 +1,5 @@
-{"earnings": [
-    {
-        "date": "24/07/6005",
-        "amount": 200,
-        "description": "re"
-    },
-    {
-        "date": "23/54/9008",
-        "amount": 40,
-        "description": "ren"
-    }
-]}
+{"earnings": [{
+    "date": "24/07/2005",
+    "amount": 300,
+    "description": "rent"
+}]}

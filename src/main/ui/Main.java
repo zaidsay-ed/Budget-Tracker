@@ -13,12 +13,12 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        new NewStatement();
+        NewStatement ns = new NewStatement();
         while (true) {
             printMenu();
             int c = sc.nextInt();
             switch (c) {
-                case 1: NewStatement.addStatement(sc, "Earning");
+                case 1: ns.addStatement(sc, "Earning");
                 break;
                 case 2: NewStatement.addStatement(sc, "Expense");
                 break;
