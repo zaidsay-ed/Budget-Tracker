@@ -19,9 +19,7 @@ more enjoyable through the term.
 the course is done
   
 
-
-### *User Stories*
-
+  
 - As a user I want a platform to track my expenses and show my purse balance.
 - As a user, I want to input my income and see how my purse is affected.
 - As a user, I want to input my expenses and see how my purse is affected.
@@ -31,25 +29,3 @@ the course is done
 
 
 
-### *Instructions for Grader*
-- You can generate the first required action related to the user story "track my expenses" by clicking the button
-  labelled view cashflow.
-- You can generate the second and third required action related to the user story "input my income and expense" by 
-  clicking the button labelled add earning and add expense respectively.
-- You can locate my visual component by seeing the budget tracker logo at the front of the page.
-- You can save the state of my application by clicking the button labelled save file.
-- You can reload the state of my application by clicking the button labelled load file.
-
-
-### *Phase 4: Task 2*
-- Loaded Cash Flow Statement
-- Earnings Added
-- Expense Added
-- Saved Cash Flow Statement
-
-
-### *Phase 4: Task 3*
-- I would possibly try simplifying the number of classes and objects I am using to store data, I feel it could be done 
-in a more efficient and systematic way. 
-- Make the program more robust by adding error handling for more scenarios to ensure data integrity, right now the date 
-input is not very robust and could accept any String.
