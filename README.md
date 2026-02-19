@@ -1,31 +1,72 @@
-# My Personal Project
+# 💰 Budget Tracker
 
-## ***Budget Tracker***
+A personal finance application that allows users to track their **income, expenses, and purse balance** in a simple and intuitive way.  
+The goal of this project is to help individuals understand their cash flow, budget effectively, and avoid overspending.
 
+This project was built as a personal initiative to combine my interest in **finance** with **software development**, and it is designed to grow as my technical skill set evolves.
 
-1. 
--   The application allows to track an individuals cash flow statements by accounting for their income and expenses.
--   This would help individual budget their expenditures and see how much they have, hence preventing them from overspending. 
--   It would provide an easy-to-use platform to monitor their financial transactions. 
+---
 
-2.
-- Any individual wishing to track their expenditures and financial transaction could use this. 
-- Normally people who are earning and want to monitor their expenses.
+## 🎯 Motivation
 
-3. 
-- Finance is something I am interested in and figuring out a way to include that in my project would make it 
-more enjoyable through the term.
-- This project has scope to grow as my skill set grows, hence, I could continue improving this project even after 
-the course is done
-  
+Managing personal finances is a common challenge, especially for individuals who earn regularly but want better visibility into their spending habits.
 
-  
-- As a user I want a platform to track my expenses and show my purse balance.
-- As a user, I want to input my income and see how my purse is affected.
-- As a user, I want to input my expenses and see how my purse is affected.
-- As a user, I want to be able to view my purse balance after each activity.
-- As a user, I want to be able to save my expenses and income statements.
-- As a user, I want to be able to load the previous statements and view my budget.
+This application provides:
+- A structured way to record income and expenses
+- Real-time visibility into remaining balance
+- Persistent storage of financial data for future review
 
+By building this project, I aimed to create a practical tool that I would personally use while strengthening my skills in application design, data persistence, and clean coding practices.
 
+---
 
+## 🚀 Features
+
+- Track income and expenses
+- Automatically update purse (balance) after each transaction
+- View current balance at any point in time
+- Save financial statements for future use
+- Load previously saved data and continue budgeting
+- Simple and user-friendly interface
+
+---
+
+## 🧑‍💻 User Stories
+
+- As a user, I want a platform to track my expenses and view my purse balance  
+- As a user, I want to input my income and see how it affects my balance  
+- As a user, I want to input my expenses and see how it affects my balance  
+- As a user, I want to view my purse balance after each activity  
+- As a user, I want to save my income and expense records  
+- As a user, I want to load previously saved records and review my budget  
+
+---
+
+## 🛠️ Technologies Used
+
+- **Java**
+- **JSwing** for the graphical user interface
+- **JSON** for data persistence
+- **JUnit** for unit testing
+
+---
+
+## 🧠 Application Design
+
+- Income and expense entries are recorded as transactions
+- Each transaction updates the user's purse balance
+- Data is persisted using JSON files, allowing users to:
+  - Save their financial data
+  - Load previous sessions and continue tracking
+- The application follows modular design principles to keep logic, UI, and data handling separate
+
+---
+
+## ▶️ How to Run
+
+```bash
+git clone https://github.com/yourusername/budget-tracker.git
+cd budget-tracker
+
+javac Main.java
+java Main
